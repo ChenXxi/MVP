@@ -89,6 +89,15 @@ public class ClsFragmennt extends Fragment implements ClsContract.IclsView ,Left
             leftAdapter = new LeftAdapter(leftClsBeanList,getActivity());
             leftRv.setAdapter(leftAdapter);
             leftAdapter.setItemClickListener(this);
+            leftAdapter.setItemClickListener(new LeftAdapter.ItemClickListener() {
+                @Override
+                public void click(String cid22) {
+                    cid = null;
+                    cid = cid22;
+                    getLeft();
+                }
+            });
+
         }else{
             leftAdapter.notifyDataSetChanged();
         }
